@@ -37,12 +37,11 @@ struct no *inserir(struct no *fila, int numero){
 struct no *remover(struct no *fila){
     //caso muito facil fila vazia
     if(fila == NULL){
-        printf("va tomar um cafe");
         return NULL;
     }
     //caso facil so tem um unico no na fila
     if(fila->proximo == NULL){
-        printf("%d\n", fila->proximo);
+        printf("%d\n", fila->numero);
         free(fila);
         return NULL;
     }
@@ -53,7 +52,7 @@ struct no *remover(struct no *fila){
     {
         penultimo = penultimo ->proximo;
     }
-    printf("%d\n", penultimo->proximo->proximo);
+    printf("%d\n", penultimo->proximo->numero);
     free(penultimo->proximo);
     penultimo->proximo=NULL;
     return fila;
@@ -70,11 +69,13 @@ void atender(struct Deque *cabeca){
 //aqui não tem ninguem
     if((cabeca->filaNormal ==NULL) && (cabeca->filapreferencial == NULL)){
         contador = 1;
+           printf("va tomar um cafe\n");
         return;
     }
 //aqui so tem normal
     if(cabeca->filapreferencial ==NULL){
         cabeca->filaNormal = remover(cabeca->filaNormal);
+        return;
     }
 
     //caso facil so tem preferencial
@@ -113,5 +114,20 @@ int main(){
     cabeca->filaNormal = NULL;
     cabeca->filapreferencial =NULL;
 
+    atender(cabeca);
+    int i = 0;
+    for(i = 0;i<10; i++){
+        cabeca->filaNormal = inserir(cabeca->filaNormal, i);
+    }
+    for(i = 0; i<10;i++){
+        atender(cabeca);
+    }
+
+        for(i = 1000;i<1010; i++){
+        cabeca->filapreferencial = inserir(cabeca->filapreferencial, i);
+    }
+    for(i = 0; i<10;i++){
+        atender(cabeca);
+    }
     
 }

@@ -119,14 +119,13 @@ int main(){
     for(i = 0;i<10; i++){
         cabeca->filaNormal = inserir(cabeca->filaNormal, i);
     }
-    for(i = 0; i<10;i++){
-        atender(cabeca);
-    }
+  
+    
 
-        for(i = 1000;i<1010; i++){
+    for(i = 1000;i<1010; i++){
         cabeca->filapreferencial = inserir(cabeca->filapreferencial, i);
     }
-    for(i = 0; i<10;i++){
+    for(i = 0; i<20;i++){
         atender(cabeca);
     }
     

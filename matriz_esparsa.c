@@ -125,4 +125,14 @@ void imprimir(){
 
 
 
-int main(){}
+int main(){
+    inserir(5);
+    inserir(293);
+    inserir(10);
+    inserir(4);
+    inserir(144);
+    inserir(9);
+    inserir(6);
+    imprimir();
+
+}

@@ -77,6 +77,7 @@ void excluir(int numero){
         struct no *limpeza =ponteirodiretor->proximoNO;
         ponteirodiretor->proximoNO=ponteirodiretor->proximoNO->proximoNO;
         free(limpeza);
+        return;
 
     }
 
@@ -98,6 +99,27 @@ void excluir(int numero){
     
 
 
+}
+
+//função que imprime matriz na tela
+
+void imprimir(){
+    struct diretor *ponteirodiretor = cabeca;
+    printf("Resto \t Numero \n");
+    while (ponteirodiretor !=NULL)
+    {
+        printf("%d\t", ponteirodiretor->resto);
+        struct no *ponteiroNO = ponteirodiretor ->proximoNO;
+        while (ponteiroNO != NULL)
+        {
+            printf("%d,", ponteiroNO ->numero);
+            ponteiroNO =ponteiroNO->proximoNO;
+        }
+        printf("\n");
+        ponteirodiretor = ponteirodiretor->proximodiretor;
+        
+    }
+    
 }
 
 

@@ -1,0 +1,15 @@
+////////////////////////////////////////////////
+//programa que implementa uma matriz esparça
+////////////////////////////////////////////////
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct matriz_esparça
+{
+    /* data */
+};
+
+
+int main(){}

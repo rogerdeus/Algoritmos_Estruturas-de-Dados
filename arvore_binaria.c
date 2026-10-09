@@ -65,4 +65,18 @@ void navegar_posordem(struct no *raiz){
 
 
 
-int main(){}
+int main(){
+    struct no *raiz = NULL;
+    int i = 0;
+
+    time_t t;
+    srand(time(&t));
+
+    for(i = 0; i< 10; i++){
+        raiz = inserir(raiz, i);
+    }
+
+    //navegação
+
+    
+}

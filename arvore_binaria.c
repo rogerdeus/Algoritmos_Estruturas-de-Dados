@@ -39,5 +39,30 @@ struct no *inserir(struct no *raiz, int numero){
 
 }
 
+///////////////////
+//funcao que faz a navegacao pre ordem
+
+void navegar_preordem(struct no *raiz){
+    if(raiz == NULL) return; //proteção
+
+    printf("%d", raiz->numero);
+    navegar_preordem(raiz->esquerda);
+    navegar_preordem(raiz->direita);
+
+}
+
+//funcao que faz a navegação pos ordem
+
+void navegar_posordem(struct no *raiz){
+    if(raiz == NULL) return; //proteção
+
+    
+    navegar_posordem(raiz->esquerda);
+    navegar_posordem(raiz->direita);
+    printf("%d", raiz->numero);
+    
+}
+
+
 
 int main(){}

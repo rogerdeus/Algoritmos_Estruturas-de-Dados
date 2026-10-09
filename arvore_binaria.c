@@ -63,6 +63,17 @@ void navegar_posordem(struct no *raiz){
     
 }
 
+void navegar_emordem(struct no *raiz){
+    if(raiz == NULL) return; //proteção
+
+    
+    navegar_emordem(raiz->esquerda);
+    printf("%d", raiz->numero);
+    navegar_emordem(raiz->direita);
+    
+    
+}
+
 
 
 int main(){
@@ -78,5 +89,13 @@ int main(){
 
     //navegação
 
-    
+    printf("pre_ordem: ");
+    navegar_preordem(raiz);
+    printf("\n");
+    printf("em_ordem: ");
+    navegar_emordem(raiz);
+    printf("\n");
+    printf("pos_ordem");
+    navegar_posordem(raiz);
+    printf("\n");
 }

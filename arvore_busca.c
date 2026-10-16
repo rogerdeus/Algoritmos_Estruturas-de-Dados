@@ -12,7 +12,21 @@ struct no
     
 };
 
+//funcao que insere um no na arvore
 
+struct no *inserir(struct no *raiz, int numero){
+    //caso facil arvore vazia
+
+    if(raiz == NULL){
+        struct no *novoNO = (struct no *) malloc(sizeof(struct no));
+        novoNO->numero = numero;
+        novoNO->esqueda = NULL;
+        novoNO->direita = NULL;
+        return novoNO;
+    }
+
+    
+}
 
 
 

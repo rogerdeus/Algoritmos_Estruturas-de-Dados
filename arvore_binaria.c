@@ -95,7 +95,7 @@ int main(){
     printf("em_ordem: ");
     navegar_emordem(raiz);
     printf("\n");
-    printf("pos_ordem");
+    printf("pos_ordem: ");
     navegar_posordem(raiz);
     printf("\n");
 }

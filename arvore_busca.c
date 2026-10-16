@@ -79,7 +79,7 @@ int main(){
     time_t t;
     srand(time(&t));
 
-    for(i =0; i <10;i++){
+    for(i =0; i <1000;i++){
         raiz= inserir(raiz, (rand() % 10));
     }
 

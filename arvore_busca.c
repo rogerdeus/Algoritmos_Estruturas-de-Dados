@@ -71,4 +71,26 @@ void navegarEmOrdem(struct no *raiz){
 
 
 
-int main(){}
+int main(){
+    struct no *raiz = NULL;
+    int i = 0;
+    int numero = 0;
+
+    time_t t;
+    srand(time(&t));
+
+    for(i =0; i <10;i++){
+        raiz= inserir(raiz, (rand() % 10));
+    }
+
+    do
+    {
+        printf("Digite um numero: ");
+        scanf("%d", &numero);
+        procurar(raiz, numero);
+    } while (numero != -99);
+
+    navegarEmOrdem(raiz);
+    
+
+}

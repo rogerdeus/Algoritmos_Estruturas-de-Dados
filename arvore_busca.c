@@ -60,6 +60,14 @@ void procurar(struct no *raiz, int numero){
     }
 }
 
+void navegarEmOrdem(struct no *raiz){
+    if(raiz==NULL) return;
+
+    navegarEmOrdem(raiz->esqueda);
+    printf("%d, ",raiz->numero);
+    navegarEmOrdem(raiz->direita);
+}
+
 
 
 

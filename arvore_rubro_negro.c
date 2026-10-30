@@ -46,6 +46,15 @@ struct no * rotaciona_direita(struct no *raizvelha){
     return raizNova;
 }
 
+/////////////////////////////
+//funcao que executa a subida do vermelho
+
+void subirVermelho(struct no *raiz){
+    raiz -> vermelho = 1;
+    raiz->esquerda ->vermelho = 0;
+    raiz->direita ->vermelho = 0;
+}
+
 
 
 int main(){}

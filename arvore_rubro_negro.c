@@ -55,6 +55,37 @@ void subirVermelho(struct no *raiz){
     raiz->direita ->vermelho = 0;
 }
 
+//funcao que insere um NO na arvore
+
+struct no *inserir(struct no *raiz, int numero){
+    //caso facil arvore vazia
+
+    if (raiz ==NULL){
+        struct no * novoNO = (struct no *) malloc(sizeof(struct no));
+        novoNO->numero = numero;
+        novoNO->esquerda = NULL;
+        novoNO->direita = NULL;
+        novoNO->vermelho = 1;
+        return novoNO;
+    }
+
+    //senario dificil
+
+    if(numero < raiz->numero){
+        raiz ->esquerda = inserir(raiz->esquerda, numero);
+
+    }else
+    {
+        raiz->direita = inserir(raiz-> direita,numero);
+    }
+
+    //correcao de balanceamento
+
+    
+    
+
+}
+
 
 
 int main(){}

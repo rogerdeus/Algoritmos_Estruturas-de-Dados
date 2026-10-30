@@ -5,6 +5,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
+#include<string.h>
 
 /////////////////////////
 //declaracao da estrutura do no
@@ -99,9 +100,24 @@ struct no *inserir(struct no *raiz, int numero){
     if((isVermelho(raiz->esquerda)) && (isVermelho(raiz->direita))){
         subirVermelho(raiz);
     }
-    
+
     return raiz;
 
+}
+
+//funcao que imprime a arvore
+
+void imprimir(struct no *raiz, char *indentacao){
+    if(raiz == NULL) return;
+
+    printf("%s%d\n", indentacao, raiz -> numero);
+
+    char *temp = (char *) malloc (1024 * sizeof(char));
+    strcpy(temp, indentacao);
+    strcat(temp, "---");
+
+    imprimir(raiz ->direita,temp);
+    imprimir(raiz->esquerda,temp);
 }
 
 

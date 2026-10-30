@@ -29,6 +29,20 @@ struct no * rotaciona_esquerda(struct no *raizvelha){
     //correcao das cores
     raizNova->vermelho = raizvelha->vermelho;
     raizvelha->vermelho = 1;
+
+    return raizNova;
+}
+
+struct no * rotaciona_direita(struct no *raizvelha){
+    //corecao dos ponteiros
+    struct no *raizNova = raizvelha ->esquerda;
+    //o filho da direita vai subir
+    raizvelha->esquerda = raizNova ->direita;
+    raizNova->direita = raizvelha;
+    //correcao das cores
+    raizNova->vermelho = raizvelha->vermelho;
+    raizvelha->vermelho = 1;
+    
     return raizNova;
 }
 

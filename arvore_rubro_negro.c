@@ -129,6 +129,7 @@ int main(){
     for(i = 0; i< 10; i++){
         raiz = inserir(raiz,i);
     }
+    raiz-> vermelho = 0;
 
     imprimir(raiz, "");
 }

@@ -55,6 +55,12 @@ void subirVermelho(struct no *raiz){
     raiz->direita ->vermelho = 0;
 }
 
+//funcao que avalia cor do no
+int isVermelho(struct no *raiz){
+    if(raiz == NULL) return 0;
+    return raiz -> vermelho;
+}
+
 //funcao que insere um NO na arvore
 
 struct no *inserir(struct no *raiz, int numero){
@@ -81,7 +87,7 @@ struct no *inserir(struct no *raiz, int numero){
 
     //correcao de balanceamento
 
-    
+
     
 
 }

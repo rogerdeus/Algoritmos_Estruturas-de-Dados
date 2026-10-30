@@ -21,9 +21,12 @@ struct no
 /////////////////////////////////
 
 struct no * rotaciona_esquerda(struct no *raizvelha){
+    //corecao dos ponteiros
     struct no *raizNova = raizvelha ->direita;
     //o filho da direita vai subir
-    
+    raizvelha->direita = raizNova ->esquerda;
+    raizNova->esquerda = raizvelha;
+    //correcao das cores
 }
 
 

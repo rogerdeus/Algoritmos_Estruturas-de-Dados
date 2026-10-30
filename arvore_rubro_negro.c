@@ -88,7 +88,19 @@ struct no *inserir(struct no *raiz, int numero){
     //correcao de balanceamento
 
 
+    if((! isVermelho(raiz ->esquerda)) && (isVermelho(raiz->direita))){
+        raiz = rotaciona_esquerda(raiz);
+    }
+
+    if((isVermelho(raiz->esquerda)) && (isVermelho(raiz->esquerda ->esquerda))){
+        raiz = rotaciona_direita;
+    }
+
+    if((isVermelho(raiz->esquerda)) && (isVermelho(raiz->direita))){
+        subirVermelho(raiz);
+    }
     
+    return raiz;
 
 }
 

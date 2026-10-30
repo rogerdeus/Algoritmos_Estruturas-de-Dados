@@ -94,7 +94,7 @@ struct no *inserir(struct no *raiz, int numero){
     }
 
     if((isVermelho(raiz->esquerda)) && (isVermelho(raiz->esquerda ->esquerda))){
-        raiz = rotaciona_direita;
+        raiz = rotaciona_direita(raiz);
     }
 
     if((isVermelho(raiz->esquerda)) && (isVermelho(raiz->direita))){
@@ -116,10 +116,19 @@ void imprimir(struct no *raiz, char *indentacao){
     strcpy(temp, indentacao);
     strcat(temp, "---");
 
-    imprimir(raiz ->direita,temp);
-    imprimir(raiz->esquerda,temp);
+    imprimir(raiz ->esquerda,temp);
+    imprimir(raiz->direita,temp);
 }
 
 
 
-int main(){}
+int main(){
+    struct no *raiz = NULL;
+    int i = 0;
+
+    for(i = 0; i< 10; i++){
+        raiz = inserir(raiz,i);
+    }
+
+    imprimir(raiz, "");
+}
